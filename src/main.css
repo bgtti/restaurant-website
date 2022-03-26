@@ -1,0 +1,348 @@
+:root {
+  --cBackground: #192026;
+  --cSelectedMenuBackground: #222932;
+  --cBtnBorder: #43474d;
+  --cBtnText: #c6cdd8;
+  --fDancingScript: "Dancing Script", cursive;
+  --fPoppins: "Poppins", sans-serif;
+  --mMargin: 20px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--fPoppins);
+  color: white;
+}
+
+ul {
+  list-style: none;
+}
+
+html,
+body,
+.content {
+  width: 100%;
+  height: 100%;
+  background-color: var(--cBackground);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* NAV */
+nav,
+.nav-menus,
+.burger-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+nav {
+  justify-content: space-between;
+  width: 100%;
+  height: 10vh;
+}
+nav h1,
+nav ul,
+.burger-icon-container {
+  margin: 20px;
+}
+
+.nav-menus {
+  display: none;
+}
+
+h1,
+li {
+  color: white;
+}
+h1 {
+  font-size: 30px;
+  font-family: var(--fDancingScript);
+}
+
+.burger-icon-container {
+  font-size: 40px;
+  cursor: pointer;
+}
+@media screen and (min-width: 800px) {
+  nav {
+    width: 80%;
+  }
+  .nav-menus {
+    display: inherit;
+  }
+  .burger-icon-container {
+    display: none;
+  }
+  .nav-menu-home {
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 1px solid var(--cSelectedMenuBackground);
+    background-color: var(--cSelectedMenuBackground);
+  }
+  nav ul {
+    height: 100%;
+  }
+  nav ul li {
+    padding: 15px 15px 0 15px;
+    height: 60%;
+    align-self: flex-end;
+  }
+}
+/* Mobile Nav */
+.mobile-nav-container,
+.name-and-icon,
+.mob-nav-menus,
+.close-icon-container {
+  display: flex;
+  align-items: center;
+}
+.mobile-nav-container,
+.mob-nav-menus {
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.mobile-nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--cBackground);
+}
+.name-and-icon {
+  height: 10vh;
+  width: 100vw;
+  justify-content: space-between;
+  border-bottom: 5px solid var(--cSelectedMenuBackground);
+}
+.name-and-icon h1 {
+  margin-left: var(--mMargin);
+}
+.close-icon-container {
+  margin-right: var(--mMargin);
+  cursor: pointer;
+}
+.name-and-icon ion-icon {
+  font-size: 40px;
+}
+.mob-nav-menus {
+  flex-grow: 100;
+}
+.mob-nav-menus li {
+  font-size: 20px;
+}
+.hide {
+  display: none;
+}
+
+/* BUTTONS */
+.btns {
+  width: 120px;
+  height: 40px;
+  background-color: var(--cSelectedMenuBackground);
+  text-decoration: none;
+  border: 2px solid var(--cBtnBorder);
+  border-radius: 3px;
+  color: var(--cBtnText);
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* MAIN BODY */
+.pageContent {
+  flex: 100 1 auto;
+  width: 100%;
+  border-top: solid 5px var(--cSelectedMenuBackground);
+}
+
+/* HOME PAGE */
+.page-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Home_img01: Photo by Valeria Boltneva from Pexels */
+.big-pic-1 {
+  width: 100%;
+  height: 90vh;
+  background-image: url("./assets/Images/home_img01.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Sections with text only (Section 1 + 4)*/
+.section-one,
+.section-four {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: var(--mMargin) 0;
+  background-color: var(--cSelectedMenuBackground);
+}
+.section-one p,
+.section-four p,
+.section-one button,
+.section-four button {
+  text-align: center;
+  margin: 0 var(--mMargin);
+}
+@media screen and (min-width: 800px) {
+  .section-one p {
+    max-width: 80%;
+  }
+}
+/* Section 1 */
+.section-one {
+  gap: var(--mMargin);
+}
+
+/* Section 4 */
+.section-four button {
+  margin: var(--mMargin) 0;
+}
+
+.section-four h2 {
+  font-size: 17px;
+}
+
+/* Sections with text and image (Section 2 + 3)*/
+.section-two,
+.section-three {
+  width: 60vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--mMargin);
+  padding: var(--mMargin) 0;
+  flex-direction: column;
+}
+.section-two-text-container,
+.section-three-text-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.section-two-text-container h2,
+.section-three-text-container h2 {
+  font-family: var(--fDancingScript);
+  font-size: 35px;
+}
+
+.small-pic-1,
+.small-pic-2 {
+  height: 60vh;
+  width: 60vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+@media screen and (min-width: 800px) {
+  .section-two,
+  .section-three {
+    width: 80%;
+    flex-direction: row;
+  }
+  .small-pic-1,
+  .small-pic-2 {
+    height: 50vh;
+    min-width: 50%;
+  }
+}
+
+/* Section 2 */
+/* Home_img02 (small-pic-1): Photo by Airam Datoon from Pexels*/
+.small-pic-1 {
+  background-image: url("./assets/Images/home_img02.jpg");
+}
+
+@media screen and (min-width: 800px) {
+  .small-pic-1 {
+    margin-right: var(--mMargin);
+  }
+  .section-two-text-container h2,
+  .section-two-text-container p {
+    margin-left: var(--mMargin);
+  }
+}
+/* Section 3 */
+/* Home_img04 (small-pic-2): Photo by Ron Lach from Pexels*/
+.small-pic-2 {
+  background-image: url("./assets/Images/home_img04.jpg");
+}
+
+@media screen and (min-width: 800px) {
+  .small-pic-2 {
+    margin-left: var(--mMargin);
+  }
+  .section-three-text-container h2,
+  .section-three-text-container p {
+    margin-right: var(--mMargin);
+  }
+}
+
+/* Home_img03: Photo by Rachel Claire from Pexels*/
+.big-pic-2 {
+  height: 80vh;
+  width: 100%;
+  background-image: url("./assets/Images/home_img03.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  margin: var(--mMargin) 0;
+}
+
+/* table pic: Photo by cottonbro from Pexels 
+wine and cheese: Photo by José Antonio Rivera Vallejo from Pexels
+meet: Photo by Valeria Boltneva from Pexels
+foto comida 2: Photo by Rachel Claire from Pexels
+
+foto com colheres: Photo by Eiliv Aceron from Pexels*/
+
+/* FOOTER */
+footer {
+  /* flex: 0 0 0; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0 0 0;
+  min-height: 50px;
+}
+@media screen and (min-width: 800px) {
+  footer {
+    height: 20px;
+    width: 80%;
+  }
+}
+footer p {
+  margin-right: 7px;
+}
+footer ion-icon {
+  font-size: 20px;
+  padding-left: 5px;
+}
+footer p,
+footer ion-icon {
+  color: white;
+}
