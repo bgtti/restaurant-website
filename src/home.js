@@ -96,41 +96,9 @@ export let HomePage = (function () {
     homeDiv.classList.add('home-container', 'page-container');
     homeDiv.append(bigPic1, sectionOne, sectionTwo, bigPic2, sectionThree, sectionFour);
 
-
-    // return
-
     return {
-        //  bigPic1,
-
-        //  sectionOne,
-        //  sectionOneText1,
-        //  sectionOneText2,
         sectionOneButton,
-
-        //  sectionTwo,
-        //  sectionTwoTextContainer,
-        //  sectionTwoText1,
-        //  sectionTwoText2,
-        //  sectionTwoText3,
-        //  sectionTwoText4,
-        //  sectionTwoPic,
-
-        //  bigPic2,
-
-        //  sectionThree,
-        //  sectionThreeTextContainer,
-        //  sectionThreeText1,
-        //  sectionThreeText2,
-        //  sectionThreeText3,
-        //  sectionThreeText4,
-        //  sectionThreePic,
-
-        // sectionFour,
-        //  sectionFourText1,
-        //  sectionFourText2,
-        //  sectionFourButton,
-        //  sectionFourText3,
-        //  sectionFourText4,
+        sectionFourButton,
 
         homeDiv
 

@@ -3,6 +3,7 @@ import { navBar, mobileNav } from "./nav.js";
 import { footer } from "./footer.js";
 import { HomePage } from "./home.js"
 import { MenuPage } from "./menu.js";
+import { ContactPage } from "./contact.js"
 
 let theHTML = document.querySelector("#content");
 let theBody = document.createElement("div");
@@ -62,9 +63,27 @@ mobileNav.theNavMenusMenu.addEventListener('click', () => {
     navigatingSite(MenuPage.menuDiv, navBar.theNavMenusMenu, mobileNav.theNavMenusMenu)
 }, false)
 
-//Event listener: change between pges in buttons
+navBar.theNavMenusContact.addEventListener('click', () => {
+    navigatingSite(ContactPage.contactDiv, navBar.theNavMenusContact, mobileNav.theNavMenusContact)
+}, false)
+
+mobileNav.theNavMenusContact.addEventListener('click', () => {
+    navigatingSite(ContactPage.contactDiv, navBar.theNavMenusContact, mobileNav.theNavMenusContact)
+}, false)
+
+//Event listener: change between pages in buttons
 
 HomePage.sectionOneButton.addEventListener('click', () => {
     navigatingSite(MenuPage.menuDiv, navBar.theNavMenusMenu, mobileNav.theNavMenusMenu)
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+}, false)
+
+HomePage.sectionFourButton.addEventListener('click', () => {
+    navigatingSite(ContactPage.contactDiv, navBar.theNavMenusContact, mobileNav.theNavMenusContact)
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+}, false)
+
+MenuPage.menuPageBtn.addEventListener('click', () => {
+    navigatingSite(ContactPage.contactDiv, navBar.theNavMenusContact, mobileNav.theNavMenusContact)
     document.body.scrollTop = document.documentElement.scrollTop = 0;
 }, false)

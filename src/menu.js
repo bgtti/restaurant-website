@@ -1,4 +1,3 @@
-
 class MenuItem {
     constructor(title, category, description, price) {
         this.title = title;
@@ -6,29 +5,6 @@ class MenuItem {
         this.description = description;
         this.price = price;
     }
-
-    // makeElement() {
-    //     let menuItemContainer = document.createElement('div');
-    //     let menuItemTitle = document.createElement('h2');
-    //     let menuItemDescription = document.createElement('p');
-    //     let menuItemPrice = document.createElement('p');
-
-    //     menuItemContainer.classList.add('menu-item-container');
-    //     menuItemPrice.classList.add('menu-item-price');
-
-    //     menuItemTitle.innerText = this.title;
-    //     menuItemDescription.innerText = this.description;
-    //     menuItemPrice.innerText = this.price;
-
-    //     menuItemContainer.append(menuItemTitle, menuItemDescription, menuItemPrice);
-
-    //     return {
-    //         menuItemContainer,
-    //         menuItemTitle,
-    //         menuItemDescription,
-    //         menuItemPrice
-    //     }
-    // }
 }
 
 let theMenu = (function () {
@@ -58,12 +34,6 @@ let theMenu = (function () {
 
     let menuItemsAll = [menuItem01, menuItem02, menuItem03, menuItem04, menuItem05, menuItem06, menuItem07, menuItem08, menuItem09];
 
-    // let menuItemsContainer = document.createElement('div');
-
-    // for (item of menuItemsAll) {
-    //     menuItemsContainer.append(item.makeElement());
-    // }
-
     let displayMenu = menuItemsAll.map(function (item) {
         return `<article class="menu-item-container">
                     <h2 class="menu-item-h2">${item.title}</h2>
@@ -78,8 +48,6 @@ let theMenu = (function () {
     menuSection.innerHTML = displayMenu;
 
     return {
-        // menuItemsAll,
-        // menuItemsContainer
         menuSection
     }
 })()
@@ -115,35 +83,15 @@ let MenuPage = (function () {
 
     pageTextSection.append(menuPageText1, menuPageText2, menuPageBtn, menuPageText3, menuPageText4)
 
-
-
     // //appending to container div
     menuDiv.append(pageTitle, theMenu.menuSection, menuPic1, pageTextSection)
 
     return {
+        menuPageBtn,
         menuDiv,
-        // pageTitle
     }
 })()
 
-// let MenuPage = (function () {
-//     let pageTitle = document.createElement('h2');
-//     pageTitle.innerText = "Le Menu";
-
-//     let menuDiv = document.createElement('div');
-//     menuDiv.classList.add('home-container', 'page-container');
-
-//     //apending to container div
-//     menuDiv.append(pageTitle, theMenu.menuItemsContainer);
-
-//     return {
-//         pageTitle,
-//         menuDiv
-//     }
-// })()
-
 export {
     MenuPage,
-    // theMenu
-    // theMenu
 }

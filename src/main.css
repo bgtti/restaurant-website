@@ -324,13 +324,6 @@ h1 {
 	margin: var(--mMargin) 0;
 }
 
-/* table pic: Photo by cottonbro from Pexels 
-wine and cheese: Photo by José Antonio Rivera Vallejo from Pexels
-meet: Photo by Valeria Boltneva from Pexels
-foto comida 2: Photo by Rachel Claire from Pexels
-
-foto com colheres: Photo by Eiliv Aceron from Pexels*/
-
 /* MENU PAGE */
 .menu-page-title {
 	font-size: 40px;
@@ -361,6 +354,7 @@ foto com colheres: Photo by Eiliv Aceron from Pexels*/
 	border: 2px solid var(--cBtnBorder);
 }
 
+/* Menu_img01 (menu-pic-1): Photo by Eiliv Aceron from Pexels*/
 .menu-pic-1 {
 	height: 80vh;
 	width: 100%;
@@ -371,7 +365,6 @@ foto com colheres: Photo by Eiliv Aceron from Pexels*/
 	background-attachment: fixed;
 	margin: var(--mMargin) 0;
 }
-
 .home-section-four-in-menu {
 	background-color: var(--cBackground);
 }
@@ -386,6 +379,47 @@ foto com colheres: Photo by Eiliv Aceron from Pexels*/
 }
 .menu-page-text-section h2 {
 	font-size: 17px;
+}
+
+/* CONTACT PAGE */
+.contact-page-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.contact-page-container section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.contact-page-container h2,
+.contact-google-maps-section {
+	margin: var(--mMargin) 0;
+}
+.contact-google-maps-section {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
+
+.contact-title {
+	font-size: 40px;
+}
+.contact-page-container section h2 {
+	font-family: var(--fDancingScript);
+	font-size: 35px;
+}
+
+/* Contact_img01 (contact-section3-picture): Photo by Catc Comi from Pexels */
+.contact-picture {
+	height: 80vh;
+	width: 100%;
+	background-image: url('./assets/Images/contact_img01.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	margin: var(--mMargin) 0;
 }
 
 /* FOOTER */
