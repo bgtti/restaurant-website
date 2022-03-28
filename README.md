@@ -6,4 +6,12 @@ This project is a restaurant website created using webpack, vanilla JS, and CSS.
 
 ![Restaurant page image preview](/src/assets/restaurant_page_preview.png)
 
+The restaurant website contains:
+
+- JS classes
+- JS map and filter
+- JS event listeners
+- mobile navigation
+- google maps iFrame
+
 More information about the project: https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/restaurant-page
