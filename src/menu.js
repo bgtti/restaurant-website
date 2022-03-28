@@ -34,20 +34,24 @@ let theMenu = (function () {
 
     let menuItemsAll = [menuItem01, menuItem02, menuItem03, menuItem04, menuItem05, menuItem06, menuItem07, menuItem08, menuItem09];
 
-    let displayMenu = menuItemsAll.map(function (item) {
-        return `<article class="menu-item-container">
+    let menuSection = document.createElement("section");
+
+    function displayMenuItems(menuItemsAll) {
+        let displayMenu = menuItemsAll.map(function (item) {
+            return `<article class="menu-item-container">
                     <h2 class="menu-item-h2">${item.title}</h2>
                     <p class="menu-item-description">${item.description}</p>
                     <p class="menu-item-price">${item.price}</p>
                     <hr>
                 </article>`;
-    })
-    displayMenu = displayMenu.join("");
-
-    let menuSection = document.createElement("section");
-    menuSection.innerHTML = displayMenu;
+        });
+        displayMenu = displayMenu.join("");
+        menuSection.innerHTML = displayMenu;
+    }
 
     return {
+        displayMenuItems,
+        menuItemsAll,
         menuSection
     }
 })()
@@ -57,6 +61,71 @@ let MenuPage = (function () {
     pageTitle.innerText = "Le Menu";
     pageTitle.classList.add('menu-page-title');
 
+    //Filters
+    let menuFilterContainer = document.createElement("div");
+    let menuFilterAll = document.createElement("button");
+    let menuFilterStarters = document.createElement("button");
+    let menuFilterMainCourses = document.createElement("button");
+    let menuFilterDesserts = document.createElement("button");
+
+    menuFilterContainer.classList.add('menu-filter-container');
+    menuFilterAll.classList.add('menu-filter-btn');
+    menuFilterStarters.classList.add('menu-filter-btn');
+    menuFilterMainCourses.classList.add('menu-filter-btn');
+    menuFilterDesserts.classList.add('menu-filter-btn');
+
+    menuFilterAll.setAttribute("data-category", "All");
+    menuFilterStarters.setAttribute("data-category", "Starters");
+    menuFilterMainCourses.setAttribute("data-category", "Main courses");
+    menuFilterDesserts.setAttribute("data-category", "Desserts");
+
+    menuFilterAll.setAttribute("type", "button");
+    menuFilterStarters.setAttribute("type", "button");
+    menuFilterMainCourses.setAttribute("type", "button");
+    menuFilterDesserts.setAttribute("type", "button");
+
+    menuFilterAll.innerText = "All";
+    menuFilterStarters.innerText = "Starters";
+    menuFilterMainCourses.innerText = "Main courses";
+    menuFilterDesserts.innerText = "Desserts";
+
+    menuFilterContainer.append(menuFilterAll, menuFilterStarters, menuFilterMainCourses, menuFilterDesserts)
+
+    //filter display on page
+    let theFilterUsed = menuFilterAll;
+    theFilterUsed.classList.add('menu-filter-selected');
+
+    //filtering items
+    theMenu.displayMenuItems(theMenu.menuItemsAll);
+
+    let filterBtns = [menuFilterAll, menuFilterStarters, menuFilterMainCourses, menuFilterDesserts];
+    filterBtns.forEach(function (btn) {
+        btn.addEventListener("click", function (e) {
+            let category = e.currentTarget.dataset.category;
+            let menuCategory = theMenu.menuItemsAll.filter(function (menuItem) {
+                if (menuItem.category === category) {
+                    return menuItem;
+                }
+            });
+            if (category === 'All') {
+                theMenu.displayMenuItems(theMenu.menuItemsAll)
+                for (let filterBtn of filterBtns) {
+                    filterBtn.classList.remove('menu-filter-selected')
+                }
+                theFilterUsed = menuFilterAll;
+                theFilterUsed.classList.add('menu-filter-selected');
+            } else {
+                theMenu.displayMenuItems(menuCategory)
+                for (let filterBtn of filterBtns) {
+                    filterBtn.classList.remove('menu-filter-selected')
+                }
+                theFilterUsed = btn;
+                theFilterUsed.classList.add('menu-filter-selected');
+            }
+        });
+    });
+
+    //Page container and picture
     let menuDiv = document.createElement('div');
     menuDiv.classList.add('menu-container', 'page-container');
 
@@ -73,7 +142,7 @@ let MenuPage = (function () {
     let menuPageText4 = document.createElement('p');
 
     menuPageText1.innerText = "don't miss this unique";
-    menuPageText2.innerText = "colunary experience";
+    menuPageText2.innerText = "culinary experience";
     menuPageBtn.innerText = "Contact us";
     menuPageText3.innerText = "This fake restaurant is waiting for you!";
     menuPageText4.innerText = "Tue-Saturday 6pm - 12pm";
@@ -84,7 +153,7 @@ let MenuPage = (function () {
     pageTextSection.append(menuPageText1, menuPageText2, menuPageBtn, menuPageText3, menuPageText4)
 
     // //appending to container div
-    menuDiv.append(pageTitle, theMenu.menuSection, menuPic1, pageTextSection)
+    menuDiv.append(pageTitle, menuFilterContainer, theMenu.menuSection, menuPic1, pageTextSection)
 
     return {
         menuPageBtn,
