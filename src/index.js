@@ -19,6 +19,11 @@ theBody.append(HomePage.homeDiv)
 navBar.theNavMenusHome.classList.add('selected-nav-item')
 mobileNav.theNavMenusHome.classList.add('selected-nav-item')
 
+//page scroll up on refresh
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+}
+
 //Event listeners: open and close mobile menu
 mobileNav.closeIconContainer.addEventListener('click', () => {
     mobileNav.theMobileNavContainer.classList.add('hide');
@@ -53,6 +58,7 @@ navBar.theNavMenusHome.addEventListener('click', () => {
 
 mobileNav.theNavMenusHome.addEventListener('click', () => {
     navigatingSite(HomePage.homeDiv, navBar.theNavMenusHome, mobileNav.theNavMenusHome)
+    mobileNav.theMobileNavContainer.classList.add('hide')
 }, false)
 
 navBar.theNavMenusMenu.addEventListener('click', () => {
@@ -61,6 +67,7 @@ navBar.theNavMenusMenu.addEventListener('click', () => {
 
 mobileNav.theNavMenusMenu.addEventListener('click', () => {
     navigatingSite(MenuPage.menuDiv, navBar.theNavMenusMenu, mobileNav.theNavMenusMenu)
+    mobileNav.theMobileNavContainer.classList.add('hide')
 }, false)
 
 navBar.theNavMenusContact.addEventListener('click', () => {
@@ -69,6 +76,7 @@ navBar.theNavMenusContact.addEventListener('click', () => {
 
 mobileNav.theNavMenusContact.addEventListener('click', () => {
     navigatingSite(ContactPage.contactDiv, navBar.theNavMenusContact, mobileNav.theNavMenusContact)
+    mobileNav.theMobileNavContainer.classList.add('hide')
 }, false)
 
 //Event listener: change between pages in buttons
