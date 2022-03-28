@@ -4,6 +4,8 @@ export let footer = (function () {
     let theIcon = document.createElement('a');
     let theIonicon = document.createElement('ion-icon');
 
+    theIonicon.classList.add('github-icon');
+
     theYear.innerText = "2022 by ";
     theIcon.setAttribute("href", "https://github.com/bgtti/");
     theIonicon.setAttribute("name", "logo-github");
@@ -18,4 +20,3 @@ export let footer = (function () {
         theIonicon
     }
 })()
-
